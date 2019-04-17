@@ -6,7 +6,9 @@ node("master"){
         // Maven installation declared in the Jenkins "Global Tool Configuration"
       maven: 'M3'){
         
-      bat "mvn verify"
+      bat label: '', script: '''cd src/main/java
+javac HelloWorld.java
+java HelloWorld'''
       
     }
   }
